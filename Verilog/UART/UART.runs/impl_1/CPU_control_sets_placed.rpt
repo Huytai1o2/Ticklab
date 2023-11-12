@@ -1,0 +1,351 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1.1 (win64) Build 3900603 Fri Jun 16 19:31:24 MDT 2023
+| Date         : Sun Nov 12 08:57:46 2023
+| Host         : Huytai102_Asus running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file CPU_control_sets_placed.rpt
+| Design       : CPU
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   273 |
+|    Minimum number of control sets                        |   273 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    73 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   273 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |   258 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     3 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     0 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               3 |            3 |
+| No           | No                    | Yes                    |              16 |            9 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |            2080 |          968 |
+| Yes          | No                    | Yes                    |              68 |           22 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+--------------------------------------+------------------+------------------+----------------+--------------+
+|    Clock Signal   |             Enable Signal            | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------+--------------------------------------+------------------+------------------+----------------+--------------+
+|  uut1/uut1/Tx_clk |                                      |                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG    |                                      |                  |                2 |              2 |         1.00 |
+|  uut1/uut1/Tx_clk |                                      | uut1/uut3/nrst   |                1 |              2 |         2.00 |
+|  uut1/uut2/CLK    | uut1/uut5/sel                        | uut1/uut3/nrst   |                2 |              4 |         2.00 |
+|  uut1/uut1/Tx_clk | uut1/uut4/bit_counter[3]_i_1_n_0     | uut1/uut3/nrst   |                1 |              4 |         4.00 |
+|  uut1/uut2/CLK    | uut1/uut5/bit_counter_reg[3]_i_1_n_0 | uut1/uut3/nrst   |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG    |                                      | uut1/uut3/nrst   |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/rear[0]_i_1_n_0            | uut1/uut3/nrst   |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG    | uut1/uut6/rear[0]_i_1__0_n_0         | uut1/uut3/nrst   |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[123][7]_i_1_n_0        |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[0][7]_i_1_n_0          |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[105][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[106][7]_i_1_n_0        |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[10][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[126][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[14][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[18][7]_i_1_n_0         |                  |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[1][7]_i_1_n_0          |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[20][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[23][7]_i_1_n_0         |                  |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[100][7]_i_1_n_0        |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[22][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[110][7]_i_1_n_0        |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[114][7]_i_1_n_0        |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[124][7]_i_1_n_0        |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[21][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[104][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[109][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[111][7]_i_1_n_0        |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[107][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[116][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[118][7]_i_1_n_0        |                  |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[119][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[115][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[117][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[11][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[120][7]_i_1_n_0        |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[125][7]_i_1_n_0        |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[127][7]_i_1_n_0        |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[103][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[112][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[102][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[113][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[12][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[15][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[16][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[19][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[121][7]_i_1_n_0        |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[101][7]_i_1_n_0        |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[122][7]_i_1_n_0        |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[13][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[79][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[7][7]_i_1_n_0          |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[73][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[49][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[64][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[65][7]_i_1_n_0         |                  |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[56][7]_i_1_n_0         |                  |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[35][7]_i_1_n_0         |                  |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[48][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[68][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[71][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[5][7]_i_1_n_0          |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[26][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[30][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[43][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[63][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[41][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[36][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[4][7]_i_1_n_0          |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[57][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[75][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[77][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[54][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[80][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[50][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[37][7]_i_1_n_0         |                  |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[44][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[25][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[6][7]_i_1_n_0          |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[74][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[81][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[47][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[45][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[29][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[46][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[55][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[51][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[60][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[31][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[59][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[62][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[66][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[69][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[42][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[78][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[24][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[39][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[27][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[34][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[38][7]_i_1_n_0         |                  |                8 |              8 |         1.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[52][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[3][7]_i_1_n_0          |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[32][7]_i_1_n_0         |                  |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[2][7]_i_1_n_0          |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[40][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[58][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[67][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[53][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[61][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[70][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[72][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[76][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[28][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[33][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[84][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[97][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[93][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[83][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[96][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[92][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[88][7]_i_1_n_0         |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[90][7]_i_1_n_0         |                  |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[99][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[91][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[89][7]_i_1_n_0         |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[82][7]_i_1_n_0         |                  |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[94][7]_i_1_n_0         |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[86][7]_i_1_n_0         |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[95][7]_i_1_n_0         |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[8][7]_i_1_n_0          |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[9][7]_i_1_n_0          |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[85][7]_i_1_n_0         |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[87][7]_i_1_n_0         |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[98][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/empty_reg_0                |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[13][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[118][7]_i_1__0_n_0     |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[119][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[107][7]_i_1__0_n_0     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[0][7]_i_1__0_n_0       |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[111][7]_i_1__0_n_0     |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[112][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[106][7]_i_1__0_n_0     |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[120][7]_i_1__0_n_0     |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[103][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[105][7]_i_1__0_n_0     |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[113][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[114][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[110][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[121][7]_i_1__0_n_0     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[109][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[10][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[108][7]_i_1__0_n_0     |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[117][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[11][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[104][7]_i_1__0_n_0     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[122][7]_i_1__0_n_0     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[123][7]_i_1__0_n_0     |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[102][7]_i_1__0_n_0     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[100][7]_i_1__0_n_0     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[116][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[124][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[101][7]_i_1__0_n_0     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[115][7]_i_1__0_n_0     |                  |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[38][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[37][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[42][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[45][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[20][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[26][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[17][7]_i_1__0_n_0      |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[40][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[49][7]_i_1__0_n_0      |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[32][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[52][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[53][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[54][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[59][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[63][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[35][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[41][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[64][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[12][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[15][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[16][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[125][7]_i_1__0_n_0     |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[25][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[24][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[33][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[44][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[43][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[30][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[46][7]_i_1__0_n_0      |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[19][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[47][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[127][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[23][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[39][7]_i_1__0_n_0      |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[48][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[50][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[18][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[4][7]_i_1__0_n_0       |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[55][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[3][7]_i_1__0_n_0       |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[57][7]_i_1__0_n_0      |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[58][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[2][7]_i_1__0_n_0       |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[5][7]_i_1__0_n_0       |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[60][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[61][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[62][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[31][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[34][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[65][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[126][7]_i_1__0_n_0     |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[29][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[14][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[27][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[56][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[1][7]_i_1__0_n_0       |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[51][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[21][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[28][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[22][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[73][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[6][7]_i_1__0_n_0       |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[81][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[8][7]_i_1__0_n_0       |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[93][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[78][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[89][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[96][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[77][7]_i_1__0_n_0      |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[91][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[36][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[84][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[68][7]_i_1__0_n_0      |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[79][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[87][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[88][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[92][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[97][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[85][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[66][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[98][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[90][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[82][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[9][7]_i_1__0_n_0       |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[71][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[74][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[99][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[69][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[72][7]_i_1__0_n_0      |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[7][7]_i_1__0_n_0       |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[75][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[76][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[86][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[95][7]_i_1__0_n_0      |                  |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[67][7]_i_1__0_n_0      |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[83][7]_i_1__0_n_0      |                  |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[80][7]_i_1__0_n_0      |                  |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[70][7]_i_1__0_n_0      |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[17][7]_i_1_n_0         |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG    | uut1/uut3/ram[108][7]_i_1_n_0        |                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG    | uut1/uut6/ram[94][7]_i_1__0_n_0      |                  |                3 |              8 |         2.67 |
+|  uut1/uut2/CLK    |                                      | uut1/uut3/nrst   |                5 |              9 |         1.80 |
+|  clk_IBUF_BUFG    | uut1/uut6/front[0]_i_1__0_n_0        | uut1/uut3/nrst   |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG    | uut1/uut3/full_i_1_n_0               | uut1/uut3/nrst   |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG    | uut1/uut6/full_i_1__0_n_0            | uut1/uut3/nrst   |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG    | uut1/uut3/front[0]_i_1_n_0           | uut1/uut3/nrst   |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG    | uut1/uut1/count[11]_i_1_n_0          |                  |                5 |             12 |         2.40 |
+|  clk_IBUF_BUFG    | uut1/uut2/count[11]_i_1__0_n_0       |                  |                3 |             12 |         4.00 |
++-------------------+--------------------------------------+------------------+------------------+----------------+--------------+
+
+
